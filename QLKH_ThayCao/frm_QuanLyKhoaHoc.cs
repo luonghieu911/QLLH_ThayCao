@@ -43,28 +43,22 @@ namespace QLKH_ThayCao
                 newObj.MaKhoaHoc = MaKhoaHoc_txt.Text;
                 newObj.TenKhoaHoc = TenKhoaHoc_txt.Text;
                 newObj.ThoiGian = ThoiGian_txt.Text;
+                //int rs;
+                //var x = int.TryParse(GioiHanSinhVien_txt.Text, out rs);
 
-
-
-                int rs;
-                var x = int.TryParse(GioiHanSinhVien_txt.Text, out rs);
-
-                if (int.TryParse(GioiHanSinhVien_txt.Text, out rs))
-                {
-                    newObj.GioiHanSinhVien = rs;
-                }
-                else
-                {
-                    MessageBox.Show("Giới hạn sinh viên phải nhập kiểu số!");
-                }
-
-
-
-                newObj.GioiHanSinhVien = Convert.ToInt32(GioiHanSinhVien_txt.Text);
-                newObj.GioiHanGiangVien = Convert.ToInt32(GioiHanGiangVien_txt.Text);
-                newObj.KinhPhiDongGop = Convert.ToInt32(KinhPhiDongGop_txt.Text);
-                newObj.SoBuoiThucHanh = Convert.ToInt32(SoBuoiThucHanh_txt.Text);
-                newObj.SoBuoiLyThuyet = Convert.ToInt32(SoBuoiLyThuyet_txt.Text);
+                //if (int.TryParse(GioiHanSinhVien_txt.Text, out rs))
+                //{
+                //    newObj.GioiHanSinhVien = rs;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Giới hạn sinh viên phải nhập kiểu số!");
+                //}
+                newObj.GioiHanSinhVien = Convert.ToInt32(GioiHanSinhVien_num.Value);
+                newObj.GioiHanGiangVien = Convert.ToInt32(GioiHanGiangVien_num.Value);
+                newObj.KinhPhiDongGop = Convert.ToInt32(KinhPhiDongGop_num.Value);
+                newObj.SoBuoiThucHanh = Convert.ToInt32(SoBuoiThucHanh_num.Value);
+                newObj.SoBuoiLyThuyet = Convert.ToInt32(SoBuoiLyThuyet_num.Value);
                 db.tbl_KhoaHocs.InsertOnSubmit(newObj);
                 db.SubmitChanges();
                 MessageBox.Show("Thêm Khóa học thành công");
@@ -87,11 +81,11 @@ namespace QLKH_ThayCao
             MaKhoaHoc_txt.ReadOnly = true;
             TenKhoaHoc_txt.Text = row.Cells["TenKhoaHoc"].Value.ToString(); 
             ThoiGian_txt.Text = row.Cells["ThoiGian"].Value.ToString();
-            GioiHanGiangVien_txt.Text = row.Cells["GioiHanGiangVien"].Value.ToString();
-            GioiHanSinhVien_txt.Text = row.Cells["GioiHanSinhVien"].Value.ToString();
+            GioiHanGiangVien_num.Text = row.Cells["GioiHanGiangVien"].Value.ToString();
+            GioiHanSinhVien_num.Text = row.Cells["GioiHanSinhVien"].Value.ToString();
 
             //đoạn code dưới đây bị lỗi khi cell KinhPhiDongGop null
-            KinhPhiDongGop_txt.Text = row.Cells["KinhPhiDongGop"].Value.ToString();
+            //KinhPhiDongGop_num.Text = row.Cells["KinhPhiDongGop"].Value.ToString();
 
             //Các cách khắc phục
             //Cách 1: Sử dụng if else
@@ -108,10 +102,10 @@ namespace QLKH_ThayCao
             //KinhPhiDongGop_txt.Text = row.Cells["KinhPhiDongGop"].Value ? .ToString() ?? "";
             //KinhPhiDongGop_txt.Text = (row.Cells["KinhPhiDongGop"].Value??"").ToString();
 
-            KinhPhiDongGop_txt.Text = Convert.ToString(row.Cells["KinhPhiDongGop"].Value);
+            KinhPhiDongGop_num.Text = Convert.ToString(row.Cells["KinhPhiDongGop"].Value);
 
-            SoBuoiThucHanh_txt.Text = row.Cells["SoBuoiThucHanh"].Value.ToString();
-            SoBuoiLyThuyet_txt.Text = row.Cells["SoBuoiLyThuyet"].Value.ToString();
+            SoBuoiThucHanh_num.Text = row.Cells["SoBuoiThucHanh"].Value.ToString();
+            SoBuoiLyThuyet_num.Text = row.Cells["SoBuoiLyThuyet"].Value.ToString();
 
         }
 
@@ -139,11 +133,11 @@ namespace QLKH_ThayCao
             MaKhoaHoc_txt.ReadOnly = false;
             TenKhoaHoc_txt.Text = "";
             ThoiGian_txt.Text = "";
-            GioiHanSinhVien_txt.Text = "";
-            GioiHanGiangVien_txt.Text = "";
-            KinhPhiDongGop_txt.Text = "";
-            SoBuoiLyThuyet_txt.Text = "";
-            SoBuoiThucHanh_txt.Text = "";
+            GioiHanSinhVien_num.Text = "";
+            GioiHanGiangVien_num.Text = "";
+            KinhPhiDongGop_num.Text = "";
+            SoBuoiLyThuyet_num.Text = "";
+            SoBuoiThucHanh_num.Text = "";
         }
     }
 }
