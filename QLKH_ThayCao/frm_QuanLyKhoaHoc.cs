@@ -30,6 +30,8 @@ namespace QLKH_ThayCao
             var dskh = db.tbl_KhoaHocs;
             DSKhoaHoc_dgv.DataSource = dskh;
             DSKhoaHoc_dgv.FirstDisplayedScrollingColumnIndex = DSKhoaHoc_dgv.ColumnCount -1;
+            SuaKhoaHoc_btn.Enabled = false;
+            XoaKhoaHoc_btn.Enabled = false;
         }
 
         private void ThemKhoaHoc_btn_Click(object sender, EventArgs e)
@@ -117,10 +119,16 @@ namespace QLKH_ThayCao
                 //code lưu trữ thông tin khóa học theo dữ liệu đã chỉnh sửa
                 tbl_KhoaHoc editObj = db.tbl_KhoaHocs.Where(o => o.MaKhoaHoc.Equals(mkh)).FirstOrDefault();
                 editObj.TenKhoaHoc = TenKhoaHoc_txt.Text;
+                editObj.ThoiGian = ThoiGian_txt.Text;
+                editObj.GioiHanSinhVien = Convert.ToInt32(GioiHanSinhVien_num.Value);
+                editObj.GioiHanGiangVien = Convert.ToInt32(GioiHanGiangVien_num.Value);
+                editObj.KinhPhiDongGop = Convert.ToInt32(KinhPhiDongGop_num.Value);
+                editObj.SoBuoiThucHanh = Convert.ToInt32(SoBuoiThucHanh_num.Value);
+                editObj.SoBuoiLyThuyet = Convert.ToInt32(SoBuoiLyThuyet_num.Value);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Sửa Khóa học không thành công");
             }
           
             db.SubmitChanges();
@@ -138,6 +146,30 @@ namespace QLKH_ThayCao
             KinhPhiDongGop_num.Text = "";
             SoBuoiLyThuyet_num.Text = "";
             SoBuoiThucHanh_num.Text = "";
+        }
+
+        private void XoaKhoaHoc_btn_Click(object sender, EventArgs e)
+        {
+            //xử lý sự kiện click nút xóa
+            try
+            {
+                var mkh = MaKhoaHoc_txt.Text;
+                tbl_KhoaHoc delObj = db.tbl_KhoaHocs.Where(o => o.MaKhoaHoc.Equals(mkh)).FirstOrDefault();
+                db.tbl_KhoaHocs.DeleteOnSubmit(delObj);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xóa Khóa học không thành công");
+            }
+            loadData_4_DSKhoaHoc_dgv();
+            ClearData_btn_Click(sender, e);
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
