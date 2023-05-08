@@ -15,7 +15,7 @@ namespace QLKH_ThayCao
         int currentPageIndex = 1;
         int pageSize = 2; //Số lượng dòng hiển thị trên 1 trang
         int pageNumber = 0;
-        int rows; //tổng số bản ghi
+        int rows; //tổng số bản ghi    
 
         void pageTotal()
         {
@@ -36,11 +36,16 @@ namespace QLKH_ThayCao
             InitializeComponent();
         }
 
-
         private void loadData_4_DSKhoaHoc_dgv()
         {
             var dskh = db.tbl_KhoaHocs.ToList();
             DSKhoaHoc_dgv.DataSource = dskh;
+            DSKhoaHoc_dgv.FirstDisplayedScrollingColumnIndex = DSKhoaHoc_dgv.ColumnCount - 1;
+            SuaKhoaHoc_btn.Enabled = false;
+            XoaKhoaHoc_btn.Enabled = false;
+            rows = dskh.ToList().Count();
+            pageSize_num.Value = pageSize;
+            pageTotal();
         }
         private void frm_QuanLyKhoaHoc_Load(object sender, EventArgs e)
         {
@@ -107,8 +112,8 @@ namespace QLKH_ThayCao
         }
 
         private void DSKhoaHoc_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
-        {    
-            if (e.RowIndex!=-1)
+        {
+            if (e.RowIndex != -1)
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row = DSKhoaHoc_dgv.Rows[e.RowIndex];
@@ -116,7 +121,7 @@ namespace QLKH_ThayCao
                 MaKhoaHoc_txt.ReadOnly = true;
                 TenKhoaHoc_txt.Text = Convert.ToString(row.Cells["TenKhoaHoc"].Value);
                 ThoiGian_txt.Text = Convert.ToString(row.Cells["ThoiGian"].Value);
-                GioiHanGiangVien_num.Value =Convert.ToInt32(row.Cells["GioiHanGiangVien"].Value);
+                GioiHanGiangVien_num.Value = Convert.ToInt32(row.Cells["GioiHanGiangVien"].Value);
                 GioiHanSinhVien_num.Value = Convert.ToInt32(row.Cells["GioiHanSinhVien"].Value);
 
                 //đoạn code dưới đây bị lỗi khi cell KinhPhiDongGop null
@@ -143,7 +148,6 @@ namespace QLKH_ThayCao
                 ThemKhoaHoc_btn.Enabled = false;
                 SuaKhoaHoc_btn.Enabled = true;
                 XoaKhoaHoc_btn.Enabled = true;
-                    
             }
         }
 
@@ -207,16 +211,6 @@ namespace QLKH_ThayCao
 
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             pageSize =Convert.ToInt32(pageSize_num.Value);
@@ -228,6 +222,56 @@ namespace QLKH_ThayCao
             currentPageIndex = Convert.ToInt32(Page_cmb.Text);
             var dskh = db.tbl_KhoaHocs.Skip((currentPageIndex - 1) * pageSize).Take(pageSize).ToList();
             DSKhoaHoc_dgv.DataSource = dskh;
+        }
+
+        private void PrePage_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(currentPageIndex == 1)
+            {
+                MessageBox.Show("Đây là trang đầu tiên");
+                return;
+            }
+            currentPageIndex = Convert.ToInt32(Page_cmb.Text);
+            int targetPageIndex = currentPageIndex - 1;
+            Page_cmb.Text = targetPageIndex.ToString();
+            var dskh = db.tbl_KhoaHocs.Skip((targetPageIndex - 1) * pageSize).Take(pageSize).ToList();
+            DSKhoaHoc_dgv.DataSource = dskh;
+        }
+
+        private void NextPage_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (currentPageIndex == pageNumber)
+            {
+                MessageBox.Show("Đây là trang cuối cùng");
+                return;
+            }
+            currentPageIndex = Convert.ToInt32(Page_cmb.Text);
+            int targetPageIndex = currentPageIndex + 1;
+            Page_cmb.Text = targetPageIndex.ToString();
+            var dskh = db.tbl_KhoaHocs.Skip((targetPageIndex - 1) * pageSize).Take(pageSize).ToList();
+            DSKhoaHoc_dgv.DataSource = dskh;
+        }
+
+        private void Search_btn_Click(object sender, EventArgs e)
+        {
+            string search_value = Search_txt.Text.ToString();
+            int search_type = searchType_cb.SelectedIndex;
+            List<tbl_KhoaHoc> dskh= new List<tbl_KhoaHoc>();
+
+            switch (search_type)
+            {
+                case 0:
+                    dskh = db.tbl_KhoaHocs.Where(o => o.MaKhoaHoc.Contains(search_value)).ToList();
+                    DSKhoaHoc_dgv.DataSource = dskh;
+                    break;
+                case 1:
+                    dskh = db.tbl_KhoaHocs.Where(o => o.TenKhoaHoc.Contains(search_value)).ToList();
+                    DSKhoaHoc_dgv.DataSource = dskh;
+                    break;
+                default:
+                    break;
+            }
+          
         }
     }
 }
