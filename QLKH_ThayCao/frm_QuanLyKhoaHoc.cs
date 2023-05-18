@@ -7,19 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq.Dynamic;
 
 namespace QLKH_ThayCao
 {
     public partial class frm_QuanLyKhoaHoc : Form
     {
         int currentPageIndex = 1;
-        int pageSize = 2; //Số lượng dòng hiển thị trên 1 trang
+        int pageSize = 10; //Số lượng dòng hiển thị trên 1 trang
         int pageNumber = 0;
         int rows; //tổng số bản ghi    
 
+        private bool sortAscending = false;
         void pageTotal()
         {
-            pageNumber = rows % pageSize != 0 ? rows / pageSize +1 : rows/pageSize;
+            pageNumber = rows % pageSize != 0 ? rows / pageSize + 1 : rows / pageSize;
             totalPage_lbl.Text = " / " + pageNumber.ToString();
             Page_cmb.Items.Clear();
             for (int i = 1; i <= pageNumber; i++)
@@ -28,19 +30,14 @@ namespace QLKH_ThayCao
             }
             Page_cmb.SelectedIndex = 0;
         }
-
-
         DatabaseDataContext db = new DatabaseDataContext();
         public frm_QuanLyKhoaHoc()
         {
             InitializeComponent();
         }
-
         private void loadData_4_DSKhoaHoc_dgv()
         {
             var dskh = db.tbl_KhoaHocs.ToList();
-            DSKhoaHoc_dgv.DataSource = dskh;
-            DSKhoaHoc_dgv.FirstDisplayedScrollingColumnIndex = DSKhoaHoc_dgv.ColumnCount - 1;
             SuaKhoaHoc_btn.Enabled = false;
             XoaKhoaHoc_btn.Enabled = false;
             rows = dskh.ToList().Count();
@@ -49,15 +46,9 @@ namespace QLKH_ThayCao
         }
         private void frm_QuanLyKhoaHoc_Load(object sender, EventArgs e)
         {
-            
-            var dskh = db.tbl_KhoaHocs;
-            DSKhoaHoc_dgv.DataSource = dskh;
-            DSKhoaHoc_dgv.FirstDisplayedScrollingColumnIndex = DSKhoaHoc_dgv.ColumnCount -1;
-            SuaKhoaHoc_btn.Enabled = false;
-            XoaKhoaHoc_btn.Enabled = false;
-            rows = dskh.ToList().Count();
-            pageSize_num.Value = pageSize;
-            pageTotal();
+
+            loadData_4_DSKhoaHoc_dgv();
+            searchType_cb.SelectedIndex = 0;
         }
 
         private void ThemKhoaHoc_btn_Click(object sender, EventArgs e)
@@ -68,7 +59,7 @@ namespace QLKH_ThayCao
                 tbl_KhoaHoc newObj = new tbl_KhoaHoc();
                 //string MaKhoaHoc = MaKhoaHoc_txt.Text;
                 //lấy dữ liệu từ các textbox
-                if (MaKhoaHoc_txt.Text!="" && TenKhoaHoc_txt.Text!="")
+                if (MaKhoaHoc_txt.Text != "" && TenKhoaHoc_txt.Text != "")
                 {
                     newObj.MaKhoaHoc = MaKhoaHoc_txt.Text;
                     newObj.TenKhoaHoc = TenKhoaHoc_txt.Text;
@@ -94,21 +85,19 @@ namespace QLKH_ThayCao
                     MessageBox.Show("Thêm Khóa học thành công");
                     loadData_4_DSKhoaHoc_dgv();
                     ClearData_btn_Click(sender, e);
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("Không được để trống mã khóa học và tên khóa học");
                 }
-                
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Thêm Khóa học không thành công");
             }
- 
-   
         }
 
         private void DSKhoaHoc_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -170,7 +159,7 @@ namespace QLKH_ThayCao
             {
                 MessageBox.Show("Sửa Khóa học không thành công");
             }
-          
+
             db.SubmitChanges();
             loadData_4_DSKhoaHoc_dgv();
         }
@@ -213,7 +202,7 @@ namespace QLKH_ThayCao
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            pageSize =Convert.ToInt32(pageSize_num.Value);
+            pageSize = Convert.ToInt32(pageSize_num.Value);
             pageTotal();
         }
 
@@ -221,12 +210,21 @@ namespace QLKH_ThayCao
         {
             currentPageIndex = Convert.ToInt32(Page_cmb.Text);
             var dskh = db.tbl_KhoaHocs.Skip((currentPageIndex - 1) * pageSize).Take(pageSize).ToList();
-            DSKhoaHoc_dgv.DataSource = dskh;
+            //DSKhoaHoc_dgv.DataSource = dskh;
+            List<KhoaHoc_ett> list_khoaHoc_ett = new List<KhoaHoc_ett>();
+            for (int i = 0; i < dskh.Count; i++)
+            {
+                KhoaHoc_ett khoaHoc_ett = new KhoaHoc_ett(dskh[i]);
+                //khoaHoc_ett.STT = Convert.ToString(i + 1);
+                khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i +1);
+                list_khoaHoc_ett.Add(khoaHoc_ett);
+            }
+            DSKhoaHoc_dgv.DataSource = list_khoaHoc_ett;
         }
 
         private void PrePage_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if(currentPageIndex == 1)
+            if (currentPageIndex == 1)
             {
                 MessageBox.Show("Đây là trang đầu tiên");
                 return;
@@ -234,8 +232,8 @@ namespace QLKH_ThayCao
             currentPageIndex = Convert.ToInt32(Page_cmb.Text);
             int targetPageIndex = currentPageIndex - 1;
             Page_cmb.Text = targetPageIndex.ToString();
-            var dskh = db.tbl_KhoaHocs.Skip((targetPageIndex - 1) * pageSize).Take(pageSize).ToList();
-            DSKhoaHoc_dgv.DataSource = dskh;
+            //var dskh = db.tbl_KhoaHocs.Skip((targetPageIndex - 1) * pageSize).Take(pageSize).ToList();
+            //DSKhoaHoc_dgv.DataSource = dskh;
         }
 
         private void NextPage_lbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -248,30 +246,65 @@ namespace QLKH_ThayCao
             currentPageIndex = Convert.ToInt32(Page_cmb.Text);
             int targetPageIndex = currentPageIndex + 1;
             Page_cmb.Text = targetPageIndex.ToString();
-            var dskh = db.tbl_KhoaHocs.Skip((targetPageIndex - 1) * pageSize).Take(pageSize).ToList();
-            DSKhoaHoc_dgv.DataSource = dskh;
+            //var dskh = db.tbl_KhoaHocs.Skip((targetPageIndex - 1) * pageSize).Take(pageSize).ToList();
+            //DSKhoaHoc_dgv.DataSource = dskh;
         }
 
         private void Search_btn_Click(object sender, EventArgs e)
         {
             string search_value = Search_txt.Text.ToString();
-            int search_type = searchType_cb.SelectedIndex;
-            List<tbl_KhoaHoc> dskh= new List<tbl_KhoaHoc>();
+            EnumSearchType search_type = (EnumSearchType)searchType_cb.SelectedIndex;
+            List<tbl_KhoaHoc> dskh = new List<tbl_KhoaHoc>();
 
             switch (search_type)
             {
-                case 0:
+                case EnumSearchType.Tatca:
+                    dskh = db.tbl_KhoaHocs.ToList();
+                    DSKhoaHoc_dgv.DataSource = dskh;
+                    break;
+                case EnumSearchType.Ma:
                     dskh = db.tbl_KhoaHocs.Where(o => o.MaKhoaHoc.Contains(search_value)).ToList();
                     DSKhoaHoc_dgv.DataSource = dskh;
                     break;
-                case 1:
+                case EnumSearchType.Ten:
                     dskh = db.tbl_KhoaHocs.Where(o => o.TenKhoaHoc.Contains(search_value)).ToList();
                     DSKhoaHoc_dgv.DataSource = dskh;
                     break;
                 default:
                     break;
             }
-          
+
+        }
+
+        private void DSKhoaHoc_dgv_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //xử lý sắp xếp
+            //Sắp xếp theo toàn bộ dữ liệu
+            List<KhoaHoc_ett> crrData = (List<KhoaHoc_ett>)DSKhoaHoc_dgv.DataSource;
+            List<KhoaHoc_ett> newData = new List<KhoaHoc_ett>();
+            if (sortAscending)
+            {
+                newData = crrData.OrderBy(DSKhoaHoc_dgv.Columns[e.ColumnIndex].DataPropertyName).ToList();
+                for (int i = 0; i < newData.Count; i++)
+                {
+                    newData[i].STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
+                }
+            }
+            else
+            {
+                newData = crrData.OrderBy(DSKhoaHoc_dgv.Columns[e.ColumnIndex].DataPropertyName).Reverse().ToList();
+                for (int i = 0; i < newData.Count; i++)
+                {
+                    newData[i].STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
+                }
+            }
+            DSKhoaHoc_dgv.DataSource = newData;
+            sortAscending = !sortAscending;
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -26,7 +26,6 @@ namespace QLKH_ThayCao
             f.Width = Main_pnl.Width;
             Main_pnl.Controls.Add(f);
             f.Show();
-
         }
 
         private void frm_Main_Resize(object sender, EventArgs e)
