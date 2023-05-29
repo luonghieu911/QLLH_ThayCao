@@ -38,8 +38,8 @@ namespace QLKH_ThayCao
         private void loadData_4_DSKhoaHoc_dgv()
         {
             var dskh = db.tbl_KhoaHocs.ToList();
-            SuaKhoaHoc_btn.Enabled = false;
-            XoaKhoaHoc_btn.Enabled = false;
+            SuaKhoaHoc_btn.Visible = false;
+            XoaKhoaHoc_btn.Visible = false;
             rows = dskh.ToList().Count();
             pageSize_num.Value = pageSize;
             pageTotal();
@@ -85,21 +85,24 @@ namespace QLKH_ThayCao
                     MessageBox.Show("Thêm Khóa học thành công");
                     loadData_4_DSKhoaHoc_dgv();
                     ClearData_btn_Click(sender, e);
-
                 }
                 else
                 {
                     MessageBox.Show("Không được để trống mã khóa học và tên khóa học");
                 }
-
-
             }
             catch (Exception ex)
             {
+                if (db.GetChangeSet().Inserts.Count > 0)
+                {
+                    foreach (tbl_KhoaHoc item in db.GetChangeSet().Inserts)
+                    {
+                        db.tbl_KhoaHocs.DeleteOnSubmit(item);
+                    }
+                }
                 MessageBox.Show("Thêm Khóa học không thành công");
             }
         }
-
         private void DSKhoaHoc_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -134,9 +137,9 @@ namespace QLKH_ThayCao
                 KinhPhiDongGop_num.Value = Convert.ToInt32(row.Cells["KinhPhiDongGop"].Value);
                 SoBuoiThucHanh_num.Value = Convert.ToInt32(row.Cells["SoBuoiThucHanh"].Value);
                 SoBuoiLyThuyet_num.Value = Convert.ToInt32(row.Cells["SoBuoiLyThuyet"].Value);
-                ThemKhoaHoc_btn.Enabled = false;
-                SuaKhoaHoc_btn.Enabled = true;
-                XoaKhoaHoc_btn.Enabled = true;
+                ThemKhoaHoc_btn.Visible = false;
+                SuaKhoaHoc_btn.Visible = true;
+                XoaKhoaHoc_btn.Visible = true;
             }
         }
 
@@ -176,9 +179,9 @@ namespace QLKH_ThayCao
             SoBuoiLyThuyet_num.Value = 0;
             SoBuoiThucHanh_num.Value = 0;
 
-            ThemKhoaHoc_btn.Enabled = true;
-            XoaKhoaHoc_btn.Enabled = false;
-            SuaKhoaHoc_btn.Enabled = false;
+            ThemKhoaHoc_btn.Visible = true;
+            XoaKhoaHoc_btn.Visible = false;
+            SuaKhoaHoc_btn.Visible = false;
         }
 
         private void XoaKhoaHoc_btn_Click(object sender, EventArgs e)
@@ -216,7 +219,7 @@ namespace QLKH_ThayCao
             {
                 KhoaHoc_ett khoaHoc_ett = new KhoaHoc_ett(dskh[i]);
                 //khoaHoc_ett.STT = Convert.ToString(i + 1);
-                khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i +1);
+                khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
                 list_khoaHoc_ett.Add(khoaHoc_ett);
             }
             DSKhoaHoc_dgv.DataSource = list_khoaHoc_ett;
@@ -255,20 +258,42 @@ namespace QLKH_ThayCao
             string search_value = Search_txt.Text.ToString();
             EnumSearchType search_type = (EnumSearchType)searchType_cb.SelectedIndex;
             List<tbl_KhoaHoc> dskh = new List<tbl_KhoaHoc>();
-
+            List<KhoaHoc_ett> list_khoaHoc_ett = new List<KhoaHoc_ett>();
             switch (search_type)
             {
                 case EnumSearchType.Tatca:
                     dskh = db.tbl_KhoaHocs.ToList();
-                    DSKhoaHoc_dgv.DataSource = dskh;
+                    for (int i = 0; i < dskh.Count; i++)
+                    {
+                        KhoaHoc_ett khoaHoc_ett = new KhoaHoc_ett(dskh[i]);
+                        //khoaHoc_ett.STT = Convert.ToString(i + 1);
+                        khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
+                        list_khoaHoc_ett.Add(khoaHoc_ett);
+                    }
+                    DSKhoaHoc_dgv.DataSource = list_khoaHoc_ett;
                     break;
                 case EnumSearchType.Ma:
                     dskh = db.tbl_KhoaHocs.Where(o => o.MaKhoaHoc.Contains(search_value)).ToList();
-                    DSKhoaHoc_dgv.DataSource = dskh;
+                    for (int i = 0; i < dskh.Count; i++)
+                    {
+                        KhoaHoc_ett khoaHoc_ett = new KhoaHoc_ett(dskh[i]);
+                        //khoaHoc_ett.STT = Convert.ToString(i + 1);
+                        khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
+                        list_khoaHoc_ett.Add(khoaHoc_ett);
+                    }
+                    DSKhoaHoc_dgv.DataSource = list_khoaHoc_ett;
+
                     break;
                 case EnumSearchType.Ten:
                     dskh = db.tbl_KhoaHocs.Where(o => o.TenKhoaHoc.Contains(search_value)).ToList();
-                    DSKhoaHoc_dgv.DataSource = dskh;
+                    for (int i = 0; i < dskh.Count; i++)
+                    {
+                        KhoaHoc_ett khoaHoc_ett = new KhoaHoc_ett(dskh[i]);
+                        //khoaHoc_ett.STT = Convert.ToString(i + 1);
+                        khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
+                        list_khoaHoc_ett.Add(khoaHoc_ett);
+                    }
+                    DSKhoaHoc_dgv.DataSource = list_khoaHoc_ett;
                     break;
                 default:
                     break;
@@ -280,11 +305,20 @@ namespace QLKH_ThayCao
         {
             //xử lý sắp xếp
             //Sắp xếp theo toàn bộ dữ liệu
-            List<KhoaHoc_ett> crrData = (List<KhoaHoc_ett>)DSKhoaHoc_dgv.DataSource;
+            //List<KhoaHoc_ett> crrData = (List<KhoaHoc_ett>)DSKhoaHoc_dgv.DataSource;
+            List<tbl_KhoaHoc> dskh = db.tbl_KhoaHocs.ToList();
+            List<KhoaHoc_ett> list_KhoaHoc_ett = new List<KhoaHoc_ett>();
+            for (int i = 0; i < dskh.Count; i++)
+            {
+                KhoaHoc_ett khoaHoc_ett = new KhoaHoc_ett(dskh[i]);
+                //khoaHoc_ett.STT = Convert.ToString(i + 1);
+                khoaHoc_ett.STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
+                list_KhoaHoc_ett.Add(khoaHoc_ett);
+            }
             List<KhoaHoc_ett> newData = new List<KhoaHoc_ett>();
             if (sortAscending)
             {
-                newData = crrData.OrderBy(DSKhoaHoc_dgv.Columns[e.ColumnIndex].DataPropertyName).ToList();
+                newData = list_KhoaHoc_ett.OrderBy(DSKhoaHoc_dgv.Columns[e.ColumnIndex].DataPropertyName).ToList();
                 for (int i = 0; i < newData.Count; i++)
                 {
                     newData[i].STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
@@ -292,19 +326,17 @@ namespace QLKH_ThayCao
             }
             else
             {
-                newData = crrData.OrderBy(DSKhoaHoc_dgv.Columns[e.ColumnIndex].DataPropertyName).Reverse().ToList();
+                newData = list_KhoaHoc_ett.OrderBy(DSKhoaHoc_dgv.Columns[e.ColumnIndex].DataPropertyName).Reverse().ToList();
                 for (int i = 0; i < newData.Count; i++)
                 {
                     newData[i].STT = Convert.ToString((currentPageIndex - 1) * pageSize + i + 1);
                 }
             }
+
+            newData = newData.Skip((currentPageIndex - 1) * pageSize).Take(pageSize).ToList();
             DSKhoaHoc_dgv.DataSource = newData;
             sortAscending = !sortAscending;
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

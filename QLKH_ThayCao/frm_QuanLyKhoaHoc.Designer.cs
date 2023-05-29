@@ -30,23 +30,6 @@ namespace QLKH_ThayCao
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Search_btn = new System.Windows.Forms.Button();
-            this.searchType_cb = new System.Windows.Forms.ComboBox();
-            this.Search_txt = new System.Windows.Forms.TextBox();
-            this.ClearData_btn = new System.Windows.Forms.Button();
-            this.XoaKhoaHoc_btn = new System.Windows.Forms.Button();
-            this.SuaKhoaHoc_btn = new System.Windows.Forms.Button();
-            this.ThemKhoaHoc_btn = new System.Windows.Forms.Button();
-            this.NextPage_lbl = new System.Windows.Forms.LinkLabel();
-            this.PrePage_lbl = new System.Windows.Forms.LinkLabel();
-            this.totalPage_lbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Page_cmb = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pageSize_num = new System.Windows.Forms.NumericUpDown();
-            this.DSKhoaHoc_dgv = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.SoBuoiLyThuyet_num = new System.Windows.Forms.NumericUpDown();
             this.SoBuoiThucHanh_num = new System.Windows.Forms.NumericUpDown();
@@ -64,19 +47,36 @@ namespace QLKH_ThayCao
             this.TenKhoaHoc_lbl = new System.Windows.Forms.Label();
             this.MaKhoaHoc_txt = new System.Windows.Forms.TextBox();
             this.MaKhoaHoc_lbl = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchType_cb = new System.Windows.Forms.ComboBox();
+            this.Search_btn = new System.Windows.Forms.Button();
+            this.Search_txt = new System.Windows.Forms.TextBox();
+            this.ClearData_btn = new System.Windows.Forms.Button();
+            this.XoaKhoaHoc_btn = new System.Windows.Forms.Button();
+            this.SuaKhoaHoc_btn = new System.Windows.Forms.Button();
+            this.ThemKhoaHoc_btn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NextPage_lbl = new System.Windows.Forms.LinkLabel();
+            this.PrePage_lbl = new System.Windows.Forms.LinkLabel();
+            this.totalPage_lbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Page_cmb = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pageSize_num = new System.Windows.Forms.NumericUpDown();
+            this.DSKhoaHoc_dgv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pageSize_num)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DSKhoaHoc_dgv)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SoBuoiLyThuyet_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoBuoiThucHanh_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KinhPhiDongGop_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GioiHanGiangVien_num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GioiHanSinhVien_num)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageSize_num)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSKhoaHoc_dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -95,7 +95,6 @@ namespace QLKH_ThayCao
             this.splitContainer1.Panel1.Controls.Add(this.XoaKhoaHoc_btn);
             this.splitContainer1.Panel1.Controls.Add(this.SuaKhoaHoc_btn);
             this.splitContainer1.Panel1.Controls.Add(this.ThemKhoaHoc_btn);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -109,226 +108,9 @@ namespace QLKH_ThayCao
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.pageSize_num);
             this.splitContainer1.Panel2.Controls.Add(this.DSKhoaHoc_dgv);
-            this.splitContainer1.Size = new System.Drawing.Size(1301, 719);
-            this.splitContainer1.SplitterDistance = 490;
+            this.splitContainer1.Size = new System.Drawing.Size(1324, 747);
+            this.splitContainer1.SplitterDistance = 498;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // Search_btn
-            // 
-            this.Search_btn.Location = new System.Drawing.Point(349, 36);
-            this.Search_btn.Name = "Search_btn";
-            this.Search_btn.Size = new System.Drawing.Size(75, 23);
-            this.Search_btn.TabIndex = 9;
-            this.Search_btn.Text = "Tìm kiếm";
-            this.Search_btn.UseVisualStyleBackColor = true;
-            this.Search_btn.Click += new System.EventHandler(this.Search_btn_Click);
-            // 
-            // searchType_cb
-            // 
-            this.searchType_cb.FormattingEnabled = true;
-            this.searchType_cb.Items.AddRange(new object[] {
-            "Tìm kiếm theo",
-            "Mã",
-            "Tên"});
-            this.searchType_cb.Location = new System.Drawing.Point(225, 35);
-            this.searchType_cb.Name = "searchType_cb";
-            this.searchType_cb.Size = new System.Drawing.Size(118, 24);
-            this.searchType_cb.TabIndex = 8;
-            // 
-            // Search_txt
-            // 
-            this.Search_txt.Location = new System.Drawing.Point(20, 36);
-            this.Search_txt.Name = "Search_txt";
-            this.Search_txt.Size = new System.Drawing.Size(191, 23);
-            this.Search_txt.TabIndex = 7;
-            // 
-            // ClearData_btn
-            // 
-            this.ClearData_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(130)))), ((int)(((byte)(105)))));
-            this.ClearData_btn.FlatAppearance.BorderSize = 0;
-            this.ClearData_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearData_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearData_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.ClearData_btn.Location = new System.Drawing.Point(65, 585);
-            this.ClearData_btn.Name = "ClearData_btn";
-            this.ClearData_btn.Size = new System.Drawing.Size(92, 52);
-            this.ClearData_btn.TabIndex = 5;
-            this.ClearData_btn.Text = "Làm mới";
-            this.ClearData_btn.UseVisualStyleBackColor = false;
-            this.ClearData_btn.Click += new System.EventHandler(this.ClearData_btn_Click);
-            // 
-            // XoaKhoaHoc_btn
-            // 
-            this.XoaKhoaHoc_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.XoaKhoaHoc_btn.FlatAppearance.BorderSize = 0;
-            this.XoaKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.XoaKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.XoaKhoaHoc_btn.Location = new System.Drawing.Point(65, 653);
-            this.XoaKhoaHoc_btn.Name = "XoaKhoaHoc_btn";
-            this.XoaKhoaHoc_btn.Size = new System.Drawing.Size(92, 50);
-            this.XoaKhoaHoc_btn.TabIndex = 4;
-            this.XoaKhoaHoc_btn.Text = "Xóa";
-            this.XoaKhoaHoc_btn.UseVisualStyleBackColor = false;
-            this.XoaKhoaHoc_btn.Click += new System.EventHandler(this.XoaKhoaHoc_btn_Click);
-            // 
-            // SuaKhoaHoc_btn
-            // 
-            this.SuaKhoaHoc_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SuaKhoaHoc_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.SuaKhoaHoc_btn.FlatAppearance.BorderSize = 0;
-            this.SuaKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SuaKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SuaKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.SuaKhoaHoc_btn.Location = new System.Drawing.Point(299, 651);
-            this.SuaKhoaHoc_btn.Name = "SuaKhoaHoc_btn";
-            this.SuaKhoaHoc_btn.Size = new System.Drawing.Size(98, 50);
-            this.SuaKhoaHoc_btn.TabIndex = 3;
-            this.SuaKhoaHoc_btn.Text = "Sửa";
-            this.SuaKhoaHoc_btn.UseVisualStyleBackColor = false;
-            this.SuaKhoaHoc_btn.Click += new System.EventHandler(this.SuaKhoaHoc_btn_Click);
-            // 
-            // ThemKhoaHoc_btn
-            // 
-            this.ThemKhoaHoc_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ThemKhoaHoc_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(127)))), ((int)(((byte)(231)))));
-            this.ThemKhoaHoc_btn.FlatAppearance.BorderSize = 0;
-            this.ThemKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemKhoaHoc_btn.Location = new System.Drawing.Point(298, 585);
-            this.ThemKhoaHoc_btn.Name = "ThemKhoaHoc_btn";
-            this.ThemKhoaHoc_btn.Size = new System.Drawing.Size(98, 52);
-            this.ThemKhoaHoc_btn.TabIndex = 10;
-            this.ThemKhoaHoc_btn.Text = "Thêm";
-            this.ThemKhoaHoc_btn.UseVisualStyleBackColor = false;
-            this.ThemKhoaHoc_btn.Click += new System.EventHandler(this.ThemKhoaHoc_btn_Click);
-            // 
-            // NextPage_lbl
-            // 
-            this.NextPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.NextPage_lbl.AutoSize = true;
-            this.NextPage_lbl.Location = new System.Drawing.Point(664, 653);
-            this.NextPage_lbl.Name = "NextPage_lbl";
-            this.NextPage_lbl.Size = new System.Drawing.Size(55, 13);
-            this.NextPage_lbl.TabIndex = 7;
-            this.NextPage_lbl.TabStop = true;
-            this.NextPage_lbl.Text = "Trang sau";
-            this.NextPage_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.NextPage_lbl_LinkClicked);
-            // 
-            // PrePage_lbl
-            // 
-            this.PrePage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PrePage_lbl.AutoSize = true;
-            this.PrePage_lbl.Location = new System.Drawing.Point(427, 653);
-            this.PrePage_lbl.Name = "PrePage_lbl";
-            this.PrePage_lbl.Size = new System.Drawing.Size(62, 13);
-            this.PrePage_lbl.TabIndex = 6;
-            this.PrePage_lbl.TabStop = true;
-            this.PrePage_lbl.Text = "Trang trước";
-            this.PrePage_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrePage_lbl_LinkClicked);
-            // 
-            // totalPage_lbl
-            // 
-            this.totalPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalPage_lbl.AutoSize = true;
-            this.totalPage_lbl.Location = new System.Drawing.Point(608, 653);
-            this.totalPage_lbl.Name = "totalPage_lbl";
-            this.totalPage_lbl.Size = new System.Drawing.Size(37, 13);
-            this.totalPage_lbl.TabIndex = 5;
-            this.totalPage_lbl.Text = "/Tổng";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(495, 653);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Trang";
-            // 
-            // Page_cmb
-            // 
-            this.Page_cmb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Page_cmb.FormattingEnabled = true;
-            this.Page_cmb.Location = new System.Drawing.Point(533, 650);
-            this.Page_cmb.Name = "Page_cmb";
-            this.Page_cmb.Size = new System.Drawing.Size(69, 21);
-            this.Page_cmb.TabIndex = 3;
-            this.Page_cmb.SelectedIndexChanged += new System.EventHandler(this.Page_cmb_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 651);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Số bản ghi trên 1 trang";
-            // 
-            // pageSize_num
-            // 
-            this.pageSize_num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pageSize_num.Location = new System.Drawing.Point(134, 649);
-            this.pageSize_num.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.pageSize_num.Name = "pageSize_num";
-            this.pageSize_num.Size = new System.Drawing.Size(63, 20);
-            this.pageSize_num.TabIndex = 1;
-            this.pageSize_num.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.pageSize_num.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // DSKhoaHoc_dgv
-            // 
-            this.DSKhoaHoc_dgv.AllowUserToAddRows = false;
-            this.DSKhoaHoc_dgv.AllowUserToDeleteRows = false;
-            this.DSKhoaHoc_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DSKhoaHoc_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DSKhoaHoc_dgv.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.DSKhoaHoc_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DSKhoaHoc_dgv.Location = new System.Drawing.Point(3, 49);
-            this.DSKhoaHoc_dgv.Name = "DSKhoaHoc_dgv";
-            this.DSKhoaHoc_dgv.ReadOnly = true;
-            this.DSKhoaHoc_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DSKhoaHoc_dgv.Size = new System.Drawing.Size(801, 565);
-            this.DSKhoaHoc_dgv.TabIndex = 0;
-            this.DSKhoaHoc_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DSKhoaHoc_dgv_CellClick);
-            this.DSKhoaHoc_dgv.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DSKhoaHoc_dgv_ColumnHeaderMouseClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label3.Location = new System.Drawing.Point(321, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 29);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Danh sách khóa học";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.searchType_cb);
-            this.groupBox1.Controls.Add(this.Search_btn);
-            this.groupBox1.Controls.Add(this.Search_txt);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(430, 81);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tìm kiếm";
             // 
             // groupBox2
             // 
@@ -536,12 +318,229 @@ namespace QLKH_ThayCao
             this.MaKhoaHoc_lbl.TabIndex = 14;
             this.MaKhoaHoc_lbl.Text = "Mã khóa học:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.searchType_cb);
+            this.groupBox1.Controls.Add(this.Search_btn);
+            this.groupBox1.Controls.Add(this.Search_txt);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(18, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(430, 81);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // searchType_cb
+            // 
+            this.searchType_cb.FormattingEnabled = true;
+            this.searchType_cb.Items.AddRange(new object[] {
+            "Tìm kiếm theo",
+            "Mã",
+            "Tên"});
+            this.searchType_cb.Location = new System.Drawing.Point(225, 35);
+            this.searchType_cb.Name = "searchType_cb";
+            this.searchType_cb.Size = new System.Drawing.Size(118, 24);
+            this.searchType_cb.TabIndex = 8;
+            // 
+            // Search_btn
+            // 
+            this.Search_btn.Location = new System.Drawing.Point(349, 36);
+            this.Search_btn.Name = "Search_btn";
+            this.Search_btn.Size = new System.Drawing.Size(75, 23);
+            this.Search_btn.TabIndex = 9;
+            this.Search_btn.Text = "Tìm kiếm";
+            this.Search_btn.UseVisualStyleBackColor = true;
+            this.Search_btn.Click += new System.EventHandler(this.Search_btn_Click);
+            // 
+            // Search_txt
+            // 
+            this.Search_txt.Location = new System.Drawing.Point(20, 36);
+            this.Search_txt.Name = "Search_txt";
+            this.Search_txt.Size = new System.Drawing.Size(191, 23);
+            this.Search_txt.TabIndex = 7;
+            // 
+            // ClearData_btn
+            // 
+            this.ClearData_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(130)))), ((int)(((byte)(105)))));
+            this.ClearData_btn.FlatAppearance.BorderSize = 0;
+            this.ClearData_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearData_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearData_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.ClearData_btn.Location = new System.Drawing.Point(65, 585);
+            this.ClearData_btn.Name = "ClearData_btn";
+            this.ClearData_btn.Size = new System.Drawing.Size(92, 52);
+            this.ClearData_btn.TabIndex = 5;
+            this.ClearData_btn.Text = "Làm mới";
+            this.ClearData_btn.UseVisualStyleBackColor = false;
+            this.ClearData_btn.Click += new System.EventHandler(this.ClearData_btn_Click);
+            // 
+            // XoaKhoaHoc_btn
+            // 
+            this.XoaKhoaHoc_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.XoaKhoaHoc_btn.FlatAppearance.BorderSize = 0;
+            this.XoaKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.XoaKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.XoaKhoaHoc_btn.Location = new System.Drawing.Point(65, 653);
+            this.XoaKhoaHoc_btn.Name = "XoaKhoaHoc_btn";
+            this.XoaKhoaHoc_btn.Size = new System.Drawing.Size(92, 50);
+            this.XoaKhoaHoc_btn.TabIndex = 4;
+            this.XoaKhoaHoc_btn.Text = "Xóa";
+            this.XoaKhoaHoc_btn.UseVisualStyleBackColor = false;
+            this.XoaKhoaHoc_btn.Click += new System.EventHandler(this.XoaKhoaHoc_btn_Click);
+            // 
+            // SuaKhoaHoc_btn
+            // 
+            this.SuaKhoaHoc_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SuaKhoaHoc_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.SuaKhoaHoc_btn.FlatAppearance.BorderSize = 0;
+            this.SuaKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SuaKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuaKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.SuaKhoaHoc_btn.Location = new System.Drawing.Point(307, 651);
+            this.SuaKhoaHoc_btn.Name = "SuaKhoaHoc_btn";
+            this.SuaKhoaHoc_btn.Size = new System.Drawing.Size(98, 50);
+            this.SuaKhoaHoc_btn.TabIndex = 3;
+            this.SuaKhoaHoc_btn.Text = "Sửa";
+            this.SuaKhoaHoc_btn.UseVisualStyleBackColor = false;
+            this.SuaKhoaHoc_btn.Click += new System.EventHandler(this.SuaKhoaHoc_btn_Click);
+            // 
+            // ThemKhoaHoc_btn
+            // 
+            this.ThemKhoaHoc_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ThemKhoaHoc_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(127)))), ((int)(((byte)(231)))));
+            this.ThemKhoaHoc_btn.FlatAppearance.BorderSize = 0;
+            this.ThemKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.ThemKhoaHoc_btn.Location = new System.Drawing.Point(306, 585);
+            this.ThemKhoaHoc_btn.Name = "ThemKhoaHoc_btn";
+            this.ThemKhoaHoc_btn.Size = new System.Drawing.Size(98, 52);
+            this.ThemKhoaHoc_btn.TabIndex = 10;
+            this.ThemKhoaHoc_btn.Text = "Thêm";
+            this.ThemKhoaHoc_btn.UseVisualStyleBackColor = false;
+            this.ThemKhoaHoc_btn.Click += new System.EventHandler(this.ThemKhoaHoc_btn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label3.Location = new System.Drawing.Point(321, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(228, 29);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Danh sách khóa học";
+            // 
+            // NextPage_lbl
+            // 
+            this.NextPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NextPage_lbl.AutoSize = true;
+            this.NextPage_lbl.Location = new System.Drawing.Point(679, 681);
+            this.NextPage_lbl.Name = "NextPage_lbl";
+            this.NextPage_lbl.Size = new System.Drawing.Size(55, 13);
+            this.NextPage_lbl.TabIndex = 7;
+            this.NextPage_lbl.TabStop = true;
+            this.NextPage_lbl.Text = "Trang sau";
+            this.NextPage_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.NextPage_lbl_LinkClicked);
+            // 
+            // PrePage_lbl
+            // 
+            this.PrePage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrePage_lbl.AutoSize = true;
+            this.PrePage_lbl.Location = new System.Drawing.Point(442, 681);
+            this.PrePage_lbl.Name = "PrePage_lbl";
+            this.PrePage_lbl.Size = new System.Drawing.Size(62, 13);
+            this.PrePage_lbl.TabIndex = 6;
+            this.PrePage_lbl.TabStop = true;
+            this.PrePage_lbl.Text = "Trang trước";
+            this.PrePage_lbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrePage_lbl_LinkClicked);
+            // 
+            // totalPage_lbl
+            // 
+            this.totalPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalPage_lbl.AutoSize = true;
+            this.totalPage_lbl.Location = new System.Drawing.Point(623, 681);
+            this.totalPage_lbl.Name = "totalPage_lbl";
+            this.totalPage_lbl.Size = new System.Drawing.Size(37, 13);
+            this.totalPage_lbl.TabIndex = 5;
+            this.totalPage_lbl.Text = "/Tổng";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(510, 681);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Trang";
+            // 
+            // Page_cmb
+            // 
+            this.Page_cmb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Page_cmb.FormattingEnabled = true;
+            this.Page_cmb.Location = new System.Drawing.Point(548, 678);
+            this.Page_cmb.Name = "Page_cmb";
+            this.Page_cmb.Size = new System.Drawing.Size(69, 21);
+            this.Page_cmb.TabIndex = 3;
+            this.Page_cmb.SelectedIndexChanged += new System.EventHandler(this.Page_cmb_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 679);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Số bản ghi trên 1 trang";
+            // 
+            // pageSize_num
+            // 
+            this.pageSize_num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pageSize_num.Location = new System.Drawing.Point(134, 677);
+            this.pageSize_num.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.pageSize_num.Name = "pageSize_num";
+            this.pageSize_num.Size = new System.Drawing.Size(63, 20);
+            this.pageSize_num.TabIndex = 1;
+            this.pageSize_num.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.pageSize_num.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // DSKhoaHoc_dgv
+            // 
+            this.DSKhoaHoc_dgv.AllowUserToAddRows = false;
+            this.DSKhoaHoc_dgv.AllowUserToDeleteRows = false;
+            this.DSKhoaHoc_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DSKhoaHoc_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DSKhoaHoc_dgv.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.DSKhoaHoc_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DSKhoaHoc_dgv.Location = new System.Drawing.Point(3, 49);
+            this.DSKhoaHoc_dgv.Name = "DSKhoaHoc_dgv";
+            this.DSKhoaHoc_dgv.ReadOnly = true;
+            this.DSKhoaHoc_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DSKhoaHoc_dgv.Size = new System.Drawing.Size(816, 593);
+            this.DSKhoaHoc_dgv.TabIndex = 0;
+            this.DSKhoaHoc_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DSKhoaHoc_dgv_CellClick);
+            this.DSKhoaHoc_dgv.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DSKhoaHoc_dgv_ColumnHeaderMouseClick);
+            // 
             // frm_QuanLyKhoaHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
-            this.ClientSize = new System.Drawing.Size(1301, 719);
+            this.ClientSize = new System.Drawing.Size(1324, 747);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_QuanLyKhoaHoc";
@@ -552,10 +551,6 @@ namespace QLKH_ThayCao
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pageSize_num)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DSKhoaHoc_dgv)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SoBuoiLyThuyet_num)).EndInit();
@@ -563,6 +558,10 @@ namespace QLKH_ThayCao
             ((System.ComponentModel.ISupportInitialize)(this.KinhPhiDongGop_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GioiHanGiangVien_num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GioiHanSinhVien_num)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageSize_num)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSKhoaHoc_dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
