@@ -77,6 +77,7 @@ namespace QLKH_ThayCao
             this.quảnLýSinhViênToolStripMenuItem.Name = "quảnLýSinhViênToolStripMenuItem";
             this.quảnLýSinhViênToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.quảnLýSinhViênToolStripMenuItem.Text = "Quản lý Sinh viên";
+            this.quảnLýSinhViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSinhViênToolStripMenuItem_Click);
             // 
             // Main_pnl
             // 

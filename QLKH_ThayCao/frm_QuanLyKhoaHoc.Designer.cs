@@ -109,7 +109,7 @@ namespace QLKH_ThayCao
             this.splitContainer1.Panel2.Controls.Add(this.pageSize_num);
             this.splitContainer1.Panel2.Controls.Add(this.DSKhoaHoc_dgv);
             this.splitContainer1.Size = new System.Drawing.Size(1324, 747);
-            this.splitContainer1.SplitterDistance = 498;
+            this.splitContainer1.SplitterDistance = 497;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox2
@@ -133,16 +133,16 @@ namespace QLKH_ThayCao
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(18, 124);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(469, 428);
+            this.groupBox2.Size = new System.Drawing.Size(469, 434);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin chi tiết khóa học";
+            this.groupBox2.Text = "Thông tin chi tiết sinh viên";
             // 
             // SoBuoiLyThuyet_num
             // 
             this.SoBuoiLyThuyet_num.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SoBuoiLyThuyet_num.Location = new System.Drawing.Point(140, 399);
+            this.SoBuoiLyThuyet_num.Location = new System.Drawing.Point(140, 400);
             this.SoBuoiLyThuyet_num.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -222,7 +222,7 @@ namespace QLKH_ThayCao
             // 
             this.SoBuoiLyThuyet_lbl.AutoSize = true;
             this.SoBuoiLyThuyet_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoBuoiLyThuyet_lbl.Location = new System.Drawing.Point(17, 401);
+            this.SoBuoiLyThuyet_lbl.Location = new System.Drawing.Point(17, 402);
             this.SoBuoiLyThuyet_lbl.Name = "SoBuoiLyThuyet_lbl";
             this.SoBuoiLyThuyet_lbl.Size = new System.Drawing.Size(85, 13);
             this.SoBuoiLyThuyet_lbl.TabIndex = 8;
@@ -398,7 +398,7 @@ namespace QLKH_ThayCao
             this.SuaKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SuaKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SuaKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.SuaKhoaHoc_btn.Location = new System.Drawing.Point(307, 651);
+            this.SuaKhoaHoc_btn.Location = new System.Drawing.Point(306, 651);
             this.SuaKhoaHoc_btn.Name = "SuaKhoaHoc_btn";
             this.SuaKhoaHoc_btn.Size = new System.Drawing.Size(98, 50);
             this.SuaKhoaHoc_btn.TabIndex = 3;
@@ -414,7 +414,7 @@ namespace QLKH_ThayCao
             this.ThemKhoaHoc_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemKhoaHoc_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThemKhoaHoc_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemKhoaHoc_btn.Location = new System.Drawing.Point(306, 585);
+            this.ThemKhoaHoc_btn.Location = new System.Drawing.Point(305, 585);
             this.ThemKhoaHoc_btn.Name = "ThemKhoaHoc_btn";
             this.ThemKhoaHoc_btn.Size = new System.Drawing.Size(98, 52);
             this.ThemKhoaHoc_btn.TabIndex = 10;
@@ -437,7 +437,7 @@ namespace QLKH_ThayCao
             // 
             this.NextPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NextPage_lbl.AutoSize = true;
-            this.NextPage_lbl.Location = new System.Drawing.Point(679, 681);
+            this.NextPage_lbl.Location = new System.Drawing.Point(680, 681);
             this.NextPage_lbl.Name = "NextPage_lbl";
             this.NextPage_lbl.Size = new System.Drawing.Size(55, 13);
             this.NextPage_lbl.TabIndex = 7;
@@ -449,7 +449,7 @@ namespace QLKH_ThayCao
             // 
             this.PrePage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PrePage_lbl.AutoSize = true;
-            this.PrePage_lbl.Location = new System.Drawing.Point(442, 681);
+            this.PrePage_lbl.Location = new System.Drawing.Point(443, 681);
             this.PrePage_lbl.Name = "PrePage_lbl";
             this.PrePage_lbl.Size = new System.Drawing.Size(62, 13);
             this.PrePage_lbl.TabIndex = 6;
@@ -461,7 +461,7 @@ namespace QLKH_ThayCao
             // 
             this.totalPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.totalPage_lbl.AutoSize = true;
-            this.totalPage_lbl.Location = new System.Drawing.Point(623, 681);
+            this.totalPage_lbl.Location = new System.Drawing.Point(624, 681);
             this.totalPage_lbl.Name = "totalPage_lbl";
             this.totalPage_lbl.Size = new System.Drawing.Size(37, 13);
             this.totalPage_lbl.TabIndex = 5;
@@ -471,7 +471,7 @@ namespace QLKH_ThayCao
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(510, 681);
+            this.label2.Location = new System.Drawing.Point(511, 681);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -481,7 +481,7 @@ namespace QLKH_ThayCao
             // 
             this.Page_cmb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Page_cmb.FormattingEnabled = true;
-            this.Page_cmb.Location = new System.Drawing.Point(548, 678);
+            this.Page_cmb.Location = new System.Drawing.Point(549, 678);
             this.Page_cmb.Name = "Page_cmb";
             this.Page_cmb.Size = new System.Drawing.Size(69, 21);
             this.Page_cmb.TabIndex = 3;
@@ -530,7 +530,7 @@ namespace QLKH_ThayCao
             this.DSKhoaHoc_dgv.Name = "DSKhoaHoc_dgv";
             this.DSKhoaHoc_dgv.ReadOnly = true;
             this.DSKhoaHoc_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DSKhoaHoc_dgv.Size = new System.Drawing.Size(816, 593);
+            this.DSKhoaHoc_dgv.Size = new System.Drawing.Size(817, 593);
             this.DSKhoaHoc_dgv.TabIndex = 0;
             this.DSKhoaHoc_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DSKhoaHoc_dgv_CellClick);
             this.DSKhoaHoc_dgv.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DSKhoaHoc_dgv_ColumnHeaderMouseClick);
