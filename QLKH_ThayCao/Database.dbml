@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLLH_ThayCao" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RQ05FGN;Initial Catalog=QLLH_ThayCao;Persist Security Info=True;User ID=hieulx" SettingsObjectName="QLKH_ThayCao.Properties.Settings" SettingsPropertyName="QLLH_ThayCaoConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.tbl_GiangVien" Member="tbl_GiangViens">
-    <Type Name="tbl_GiangVien">
-      <Column Name="MaGV" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CCCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="tbl_GiangVien_tbl_LopHoc_GiangVien" Member="tbl_LopHoc_GiangViens" ThisKey="MaGV" OtherKey="MaGV" Type="tbl_LopHoc_GiangVien" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RQ05FGN;Initial Catalog=QLLH_ThayCao;Integrated Security=True" SettingsObjectName="QLKH_ThayCao.Properties.Settings" SettingsPropertyName="QLLH_ThayCaoConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_SinhVien" Member="tbl_SinhViens">
     <Type Name="tbl_SinhVien">
       <Column Name="MSSV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -19,7 +9,6 @@
       <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_SinhVien_tbl_LopHoc_SinhVien" Member="tbl_LopHoc_SinhViens" ThisKey="MSSV" OtherKey="MSSV" Type="tbl_LopHoc_SinhVien" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_KhoaHoc" Member="tbl_KhoaHocs">
@@ -32,7 +21,6 @@
       <Column Name="KinhPhiDongGop" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="SoBuoiThucHanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoBuoiLyThuyet" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbl_KhoaHoc_tbl_LopHoc" Member="tbl_LopHocs" ThisKey="MaKhoaHoc" OtherKey="MaKhoaHoc" Type="tbl_LopHoc" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_LopHoc" Member="tbl_LopHocs">
@@ -42,9 +30,6 @@
       <Column Name="ThoiGianBatDau" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="ThoiGianKetThuc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MaKhoaHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="tbl_LopHoc_tbl_LopHoc_GiangVien" Member="tbl_LopHoc_GiangViens" ThisKey="MaLH" OtherKey="MaLH" Type="tbl_LopHoc_GiangVien" />
-      <Association Name="tbl_LopHoc_tbl_LopHoc_SinhVien" Member="tbl_LopHoc_SinhViens" ThisKey="MaLH" OtherKey="MaLH" Type="tbl_LopHoc_SinhVien" />
-      <Association Name="tbl_KhoaHoc_tbl_LopHoc" Member="tbl_KhoaHoc" ThisKey="MaKhoaHoc" OtherKey="MaKhoaHoc" Type="tbl_KhoaHoc" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_LopHoc_GiangVien" Member="tbl_LopHoc_GiangViens">
@@ -52,8 +37,6 @@
       <Column Name="Id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaLH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaGV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="tbl_GiangVien_tbl_LopHoc_GiangVien" Member="tbl_GiangVien" ThisKey="MaGV" OtherKey="MaGV" Type="tbl_GiangVien" IsForeignKey="true" />
-      <Association Name="tbl_LopHoc_tbl_LopHoc_GiangVien" Member="tbl_LopHoc" ThisKey="MaLH" OtherKey="MaLH" Type="tbl_LopHoc" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_LopHoc_SinhVien" Member="tbl_LopHoc_SinhViens">
@@ -61,8 +44,16 @@
       <Column Name="Id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaLH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MSSV" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Association Name="tbl_LopHoc_tbl_LopHoc_SinhVien" Member="tbl_LopHoc" ThisKey="MaLH" OtherKey="MaLH" Type="tbl_LopHoc" IsForeignKey="true" />
-      <Association Name="tbl_SinhVien_tbl_LopHoc_SinhVien" Member="tbl_SinhVien" ThisKey="MSSV" OtherKey="MSSV" Type="tbl_SinhVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_GiangVien" Member="tbl_GiangViens">
+    <Type Name="tbl_GiangVien">
+      <Column Name="MaGV" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="CCCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

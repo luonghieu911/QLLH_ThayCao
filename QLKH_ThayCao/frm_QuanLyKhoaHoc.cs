@@ -17,7 +17,7 @@ namespace QLKH_ThayCao
         int pageSize = 10; //Số lượng dòng hiển thị trên 1 trang
         int pageNumber = 0;
         int rows; //tổng số bản ghi    
-
+        DatabaseDataContext db = new DatabaseDataContext();
         private bool sortAscending = false;
         void pageTotal()
         {
@@ -30,7 +30,7 @@ namespace QLKH_ThayCao
             }
             Page_cmb.SelectedIndex = 0;
         }
-        DatabaseDataContext db = new DatabaseDataContext();
+      
         public frm_QuanLyKhoaHoc()
         {
             InitializeComponent();
@@ -198,6 +198,7 @@ namespace QLKH_ThayCao
             {
                 MessageBox.Show("Xóa Khóa học không thành công");
             }
+            MessageBox.Show("Xóa Khóa học thành công");
             loadData_4_DSKhoaHoc_dgv();
             ClearData_btn_Click(sender, e);
 

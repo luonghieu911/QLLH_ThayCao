@@ -98,12 +98,14 @@ namespace QLKH_ThayCao
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.pageSize_num);
             this.splitContainer1.Panel2.Controls.Add(this.DSSinhVien_dgv);
-            this.splitContainer1.Size = new System.Drawing.Size(1268, 743);
-            this.splitContainer1.SplitterDistance = 499;
+            this.splitContainer1.Size = new System.Drawing.Size(1315, 743);
+            this.splitContainer1.SplitterDistance = 473;
             this.splitContainer1.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.Email_txt);
             this.groupBox2.Controls.Add(this.SDT_txt);
             this.groupBox2.Controls.Add(this.NgaySinh_dtp);
@@ -121,7 +123,7 @@ namespace QLKH_ThayCao
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 115);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(469, 428);
+            this.groupBox2.Size = new System.Drawing.Size(443, 428);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chi tiết khóa học";
@@ -133,7 +135,7 @@ namespace QLKH_ThayCao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Email_txt.Location = new System.Drawing.Point(139, 363);
             this.Email_txt.Name = "Email_txt";
-            this.Email_txt.Size = new System.Drawing.Size(312, 23);
+            this.Email_txt.Size = new System.Drawing.Size(286, 23);
             this.Email_txt.TabIndex = 21;
             // 
             // SDT_txt
@@ -143,25 +145,29 @@ namespace QLKH_ThayCao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SDT_txt.Location = new System.Drawing.Point(139, 314);
             this.SDT_txt.Name = "SDT_txt";
-            this.SDT_txt.Size = new System.Drawing.Size(313, 23);
+            this.SDT_txt.Size = new System.Drawing.Size(287, 23);
             this.SDT_txt.TabIndex = 20;
             // 
             // NgaySinh_dtp
             // 
+            this.NgaySinh_dtp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NgaySinh_dtp.Location = new System.Drawing.Point(139, 249);
             this.NgaySinh_dtp.Name = "NgaySinh_dtp";
-            this.NgaySinh_dtp.Size = new System.Drawing.Size(312, 23);
+            this.NgaySinh_dtp.Size = new System.Drawing.Size(286, 23);
             this.NgaySinh_dtp.TabIndex = 19;
             // 
             // GioiTinh_cb
             // 
+            this.GioiTinh_cb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GioiTinh_cb.FormattingEnabled = true;
             this.GioiTinh_cb.Items.AddRange(new object[] {
             "Nữ",
             "Nam"});
             this.GioiTinh_cb.Location = new System.Drawing.Point(139, 191);
             this.GioiTinh_cb.Name = "GioiTinh_cb";
-            this.GioiTinh_cb.Size = new System.Drawing.Size(313, 24);
+            this.GioiTinh_cb.Size = new System.Drawing.Size(287, 24);
             this.GioiTinh_cb.TabIndex = 18;
             // 
             // Email_lbl
@@ -211,7 +217,7 @@ namespace QLKH_ThayCao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LopQL_txt.Location = new System.Drawing.Point(139, 134);
             this.LopQL_txt.Name = "LopQL_txt";
-            this.LopQL_txt.Size = new System.Drawing.Size(312, 23);
+            this.LopQL_txt.Size = new System.Drawing.Size(286, 23);
             this.LopQL_txt.TabIndex = 17;
             // 
             // LopQL_lbl
@@ -231,7 +237,7 @@ namespace QLKH_ThayCao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.HoVaTen_txt.Location = new System.Drawing.Point(139, 80);
             this.HoVaTen_txt.Name = "HoVaTen_txt";
-            this.HoVaTen_txt.Size = new System.Drawing.Size(312, 23);
+            this.HoVaTen_txt.Size = new System.Drawing.Size(286, 23);
             this.HoVaTen_txt.TabIndex = 16;
             // 
             // HoVaTen_lbl
@@ -251,7 +257,7 @@ namespace QLKH_ThayCao
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MSSV_txt.Location = new System.Drawing.Point(139, 31);
             this.MSSV_txt.Name = "MSSV_txt";
-            this.MSSV_txt.Size = new System.Drawing.Size(312, 23);
+            this.MSSV_txt.Size = new System.Drawing.Size(286, 23);
             this.MSSV_txt.TabIndex = 15;
             // 
             // MSSV_lbl
@@ -266,13 +272,15 @@ namespace QLKH_ThayCao
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.searchType_cb);
             this.groupBox1.Controls.Add(this.Search_btn);
             this.groupBox1.Controls.Add(this.Search_txt);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(430, 81);
+            this.groupBox1.Size = new System.Drawing.Size(454, 81);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
@@ -284,19 +292,20 @@ namespace QLKH_ThayCao
             "Tìm kiếm theo",
             "Mã",
             "Tên"});
-            this.searchType_cb.Location = new System.Drawing.Point(225, 35);
+            this.searchType_cb.Location = new System.Drawing.Point(229, 35);
             this.searchType_cb.Name = "searchType_cb";
             this.searchType_cb.Size = new System.Drawing.Size(118, 24);
             this.searchType_cb.TabIndex = 8;
             // 
             // Search_btn
             // 
-            this.Search_btn.Location = new System.Drawing.Point(349, 36);
+            this.Search_btn.Location = new System.Drawing.Point(368, 36);
             this.Search_btn.Name = "Search_btn";
             this.Search_btn.Size = new System.Drawing.Size(75, 23);
             this.Search_btn.TabIndex = 9;
             this.Search_btn.Text = "Tìm kiếm";
             this.Search_btn.UseVisualStyleBackColor = true;
+            this.Search_btn.Click += new System.EventHandler(this.Search_btn_Click);
             // 
             // Search_txt
             // 
@@ -333,6 +342,7 @@ namespace QLKH_ThayCao
             this.XoaSinhVien_btn.TabIndex = 14;
             this.XoaSinhVien_btn.Text = "Xóa";
             this.XoaSinhVien_btn.UseVisualStyleBackColor = false;
+            this.XoaSinhVien_btn.Click += new System.EventHandler(this.XoaSinhVien_btn_Click);
             // 
             // SuaSinhVien_btn
             // 
@@ -342,12 +352,13 @@ namespace QLKH_ThayCao
             this.SuaSinhVien_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SuaSinhVien_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SuaSinhVien_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.SuaSinhVien_btn.Location = new System.Drawing.Point(364, 635);
+            this.SuaSinhVien_btn.Location = new System.Drawing.Point(338, 635);
             this.SuaSinhVien_btn.Name = "SuaSinhVien_btn";
             this.SuaSinhVien_btn.Size = new System.Drawing.Size(98, 50);
             this.SuaSinhVien_btn.TabIndex = 13;
             this.SuaSinhVien_btn.Text = "Sửa";
             this.SuaSinhVien_btn.UseVisualStyleBackColor = false;
+            this.SuaSinhVien_btn.Click += new System.EventHandler(this.SuaSinhVien_btn_Click);
             // 
             // ThemSinhVien_btn
             // 
@@ -357,7 +368,7 @@ namespace QLKH_ThayCao
             this.ThemSinhVien_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemSinhVien_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThemSinhVien_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.ThemSinhVien_btn.Location = new System.Drawing.Point(365, 561);
+            this.ThemSinhVien_btn.Location = new System.Drawing.Point(339, 561);
             this.ThemSinhVien_btn.Name = "ThemSinhVien_btn";
             this.ThemSinhVien_btn.Size = new System.Drawing.Size(98, 52);
             this.ThemSinhVien_btn.TabIndex = 16;
@@ -380,7 +391,7 @@ namespace QLKH_ThayCao
             // 
             this.NextPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NextPage_lbl.AutoSize = true;
-            this.NextPage_lbl.Location = new System.Drawing.Point(681, 697);
+            this.NextPage_lbl.Location = new System.Drawing.Point(754, 697);
             this.NextPage_lbl.Name = "NextPage_lbl";
             this.NextPage_lbl.Size = new System.Drawing.Size(55, 13);
             this.NextPage_lbl.TabIndex = 15;
@@ -392,7 +403,7 @@ namespace QLKH_ThayCao
             // 
             this.PrePage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PrePage_lbl.AutoSize = true;
-            this.PrePage_lbl.Location = new System.Drawing.Point(444, 697);
+            this.PrePage_lbl.Location = new System.Drawing.Point(517, 697);
             this.PrePage_lbl.Name = "PrePage_lbl";
             this.PrePage_lbl.Size = new System.Drawing.Size(62, 13);
             this.PrePage_lbl.TabIndex = 14;
@@ -404,7 +415,7 @@ namespace QLKH_ThayCao
             // 
             this.totalPage_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.totalPage_lbl.AutoSize = true;
-            this.totalPage_lbl.Location = new System.Drawing.Point(625, 697);
+            this.totalPage_lbl.Location = new System.Drawing.Point(698, 697);
             this.totalPage_lbl.Name = "totalPage_lbl";
             this.totalPage_lbl.Size = new System.Drawing.Size(37, 13);
             this.totalPage_lbl.TabIndex = 13;
@@ -414,7 +425,7 @@ namespace QLKH_ThayCao
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(512, 697);
+            this.label2.Location = new System.Drawing.Point(585, 697);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 12;
@@ -424,7 +435,7 @@ namespace QLKH_ThayCao
             // 
             this.Page_cmb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Page_cmb.FormattingEnabled = true;
-            this.Page_cmb.Location = new System.Drawing.Point(550, 694);
+            this.Page_cmb.Location = new System.Drawing.Point(623, 694);
             this.Page_cmb.Name = "Page_cmb";
             this.Page_cmb.Size = new System.Drawing.Size(69, 21);
             this.Page_cmb.TabIndex = 11;
@@ -463,9 +474,6 @@ namespace QLKH_ThayCao
             // 
             this.DSSinhVien_dgv.AllowUserToAddRows = false;
             this.DSSinhVien_dgv.AllowUserToDeleteRows = false;
-            this.DSSinhVien_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DSSinhVien_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DSSinhVien_dgv.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.DSSinhVien_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -473,15 +481,16 @@ namespace QLKH_ThayCao
             this.DSSinhVien_dgv.Name = "DSSinhVien_dgv";
             this.DSSinhVien_dgv.ReadOnly = true;
             this.DSSinhVien_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DSSinhVien_dgv.Size = new System.Drawing.Size(758, 609);
+            this.DSSinhVien_dgv.Size = new System.Drawing.Size(806, 609);
             this.DSSinhVien_dgv.TabIndex = 8;
+            this.DSSinhVien_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DSSinhVien_dgv_CellClick);
             // 
             // frm_QuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
-            this.ClientSize = new System.Drawing.Size(1268, 743);
+            this.ClientSize = new System.Drawing.Size(1315, 743);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_QuanLySinhVien";

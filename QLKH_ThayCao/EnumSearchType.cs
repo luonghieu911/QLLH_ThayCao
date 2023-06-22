@@ -8,9 +8,16 @@ namespace QLKH_ThayCao
 {
     public enum EnumSearchType
     {
-        Tatca= 0,
+        Tatca = 0,
         Ma,
         Ten,
+        //
+    }
+    public enum EnumGioiTinhCbx
+    {
+        Nu = 0,
+        Nam,
+        Khac,
         //
     }
 }

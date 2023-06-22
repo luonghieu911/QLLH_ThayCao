@@ -24,6 +24,7 @@ namespace QLKH_ThayCao
             f.TopLevel = false;
             f.Height = Main_pnl.Height;
             f.Width = Main_pnl.Width;
+            Main_pnl.Controls.Clear();
             Main_pnl.Controls.Add(f);
             f.Show();
         }
@@ -33,12 +34,46 @@ namespace QLKH_ThayCao
             FormCollection fc = Application.OpenForms;
             foreach (Form f in fc)
             {
-                if(f.Name == "frm_QuanLyKhoaHoc")
+                if(f.Name == "frm_QuanLyKhoaHoc"||f.Name=="frm_QuanLySinhVien")
                 {
                     f.Height = Main_pnl.Height;
                     f.Width = Main_pnl.Width;
                 }
             }
+        }
+
+        private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //code cho sự kiện click menu Quản lý sinh viên
+            frm_QuanLySinhVien f = new frm_QuanLySinhVien();
+            f.TopLevel = false;
+            f.Height = Main_pnl.Height;
+            f.Width = Main_pnl.Width;
+            Main_pnl.Controls.Clear();
+            Main_pnl.Controls.Add(f);
+            f.Show();
+        }
+
+        private void quảnLýGiảngViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_QuanLyGiangVien f = new frm_QuanLyGiangVien();
+            f.TopLevel = false;
+            f.Height = Main_pnl.Height;
+            f.Width = Main_pnl.Width;
+            Main_pnl.Controls.Clear();
+            Main_pnl.Controls.Add(f);
+            f.Show();
+        }
+
+        private void quảnLýLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_QuanLyLopHoc f = new frm_QuanLyLopHoc();
+            f.TopLevel = false;
+            f.Height = Main_pnl.Height;
+            f.Width = Main_pnl.Width;
+            Main_pnl.Controls.Clear();
+            Main_pnl.Controls.Add(f);
+            f.Show();
         }
     }
 }

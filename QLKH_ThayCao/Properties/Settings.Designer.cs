@@ -33,5 +33,16 @@ namespace QLKH_ThayCao.Properties {
                 return ((string)(this["QLLH_ThayCaoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-RQ05FGN;Initial Catalog=QLLH_ThayCao;Integrated Security=True" +
+            "")]
+        public string QLLH_ThayCaoConnectionString1 {
+            get {
+                return ((string)(this["QLLH_ThayCaoConnectionString1"]));
+            }
+        }
     }
 }

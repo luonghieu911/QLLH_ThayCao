@@ -49,7 +49,7 @@ namespace QLKH_ThayCao
             this.quảnLýSinhViênToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1515, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,12 +65,14 @@ namespace QLKH_ThayCao
             this.quảnLýLớpHọcToolStripMenuItem.Name = "quảnLýLớpHọcToolStripMenuItem";
             this.quảnLýLớpHọcToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.quảnLýLớpHọcToolStripMenuItem.Text = "Quản lý Lớp học";
+            this.quảnLýLớpHọcToolStripMenuItem.Click += new System.EventHandler(this.quảnLýLớpHọcToolStripMenuItem_Click);
             // 
             // quảnLýGiảngViênToolStripMenuItem
             // 
             this.quảnLýGiảngViênToolStripMenuItem.Name = "quảnLýGiảngViênToolStripMenuItem";
             this.quảnLýGiảngViênToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.quảnLýGiảngViênToolStripMenuItem.Text = "Quản lý Giảng viên";
+            this.quảnLýGiảngViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýGiảngViênToolStripMenuItem_Click);
             // 
             // quảnLýSinhViênToolStripMenuItem
             // 
@@ -87,14 +89,14 @@ namespace QLKH_ThayCao
             this.Main_pnl.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Main_pnl.Location = new System.Drawing.Point(0, 27);
             this.Main_pnl.Name = "Main_pnl";
-            this.Main_pnl.Size = new System.Drawing.Size(1235, 767);
+            this.Main_pnl.Size = new System.Drawing.Size(1515, 729);
             this.Main_pnl.TabIndex = 1;
             // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 797);
+            this.ClientSize = new System.Drawing.Size(1515, 759);
             this.Controls.Add(this.Main_pnl);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

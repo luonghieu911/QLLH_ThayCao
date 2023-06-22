@@ -30,9 +30,6 @@ namespace QLKH_ThayCao
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Inserttbl_GiangVien(tbl_GiangVien instance);
-    partial void Updatetbl_GiangVien(tbl_GiangVien instance);
-    partial void Deletetbl_GiangVien(tbl_GiangVien instance);
     partial void Inserttbl_SinhVien(tbl_SinhVien instance);
     partial void Updatetbl_SinhVien(tbl_SinhVien instance);
     partial void Deletetbl_SinhVien(tbl_SinhVien instance);
@@ -48,10 +45,13 @@ namespace QLKH_ThayCao
     partial void Inserttbl_LopHoc_SinhVien(tbl_LopHoc_SinhVien instance);
     partial void Updatetbl_LopHoc_SinhVien(tbl_LopHoc_SinhVien instance);
     partial void Deletetbl_LopHoc_SinhVien(tbl_LopHoc_SinhVien instance);
+    partial void Inserttbl_GiangVien(tbl_GiangVien instance);
+    partial void Updatetbl_GiangVien(tbl_GiangVien instance);
+    partial void Deletetbl_GiangVien(tbl_GiangVien instance);
     #endregion
 		
 		public DatabaseDataContext() : 
-				base(global::QLKH_ThayCao.Properties.Settings.Default.QLLH_ThayCaoConnectionString, mappingSource)
+				base(global::QLKH_ThayCao.Properties.Settings.Default.QLLH_ThayCaoConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -78,14 +78,6 @@ namespace QLKH_ThayCao
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<tbl_GiangVien> tbl_GiangViens
-		{
-			get
-			{
-				return this.GetTable<tbl_GiangVien>();
-			}
 		}
 		
 		public System.Data.Linq.Table<tbl_SinhVien> tbl_SinhViens
@@ -127,191 +119,13 @@ namespace QLKH_ThayCao
 				return this.GetTable<tbl_LopHoc_SinhVien>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_GiangVien")]
-	public partial class tbl_GiangVien : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaGV;
-		
-		private string _HoTen;
-		
-		private string _SDT;
-		
-		private string _CCCD;
-		
-		private string _DiaChi;
-		
-		private EntitySet<tbl_LopHoc_GiangVien> _tbl_LopHoc_GiangViens;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaGVChanging(string value);
-    partial void OnMaGVChanged();
-    partial void OnHoTenChanging(string value);
-    partial void OnHoTenChanged();
-    partial void OnSDTChanging(string value);
-    partial void OnSDTChanged();
-    partial void OnCCCDChanging(string value);
-    partial void OnCCCDChanged();
-    partial void OnDiaChiChanging(string value);
-    partial void OnDiaChiChanged();
-    #endregion
-		
-		public tbl_GiangVien()
-		{
-			this._tbl_LopHoc_GiangViens = new EntitySet<tbl_LopHoc_GiangVien>(new Action<tbl_LopHoc_GiangVien>(this.attach_tbl_LopHoc_GiangViens), new Action<tbl_LopHoc_GiangVien>(this.detach_tbl_LopHoc_GiangViens));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaGV
+		public System.Data.Linq.Table<tbl_GiangVien> tbl_GiangViens
 		{
 			get
 			{
-				return this._MaGV;
+				return this.GetTable<tbl_GiangVien>();
 			}
-			set
-			{
-				if ((this._MaGV != value))
-				{
-					this.OnMaGVChanging(value);
-					this.SendPropertyChanging();
-					this._MaGV = value;
-					this.SendPropertyChanged("MaGV");
-					this.OnMaGVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(300)")]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this.OnHoTenChanging(value);
-					this.SendPropertyChanging();
-					this._HoTen = value;
-					this.SendPropertyChanged("HoTen");
-					this.OnHoTenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NVarChar(50)")]
-		public string SDT
-		{
-			get
-			{
-				return this._SDT;
-			}
-			set
-			{
-				if ((this._SDT != value))
-				{
-					this.OnSDTChanging(value);
-					this.SendPropertyChanging();
-					this._SDT = value;
-					this.SendPropertyChanged("SDT");
-					this.OnSDTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CCCD", DbType="NVarChar(50)")]
-		public string CCCD
-		{
-			get
-			{
-				return this._CCCD;
-			}
-			set
-			{
-				if ((this._CCCD != value))
-				{
-					this.OnCCCDChanging(value);
-					this.SendPropertyChanging();
-					this._CCCD = value;
-					this.SendPropertyChanged("CCCD");
-					this.OnCCCDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(500)")]
-		public string DiaChi
-		{
-			get
-			{
-				return this._DiaChi;
-			}
-			set
-			{
-				if ((this._DiaChi != value))
-				{
-					this.OnDiaChiChanging(value);
-					this.SendPropertyChanging();
-					this._DiaChi = value;
-					this.SendPropertyChanged("DiaChi");
-					this.OnDiaChiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_GiangVien_tbl_LopHoc_GiangVien", Storage="_tbl_LopHoc_GiangViens", ThisKey="MaGV", OtherKey="MaGV")]
-		public EntitySet<tbl_LopHoc_GiangVien> tbl_LopHoc_GiangViens
-		{
-			get
-			{
-				return this._tbl_LopHoc_GiangViens;
-			}
-			set
-			{
-				this._tbl_LopHoc_GiangViens.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tbl_LopHoc_GiangViens(tbl_LopHoc_GiangVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_GiangVien = this;
-		}
-		
-		private void detach_tbl_LopHoc_GiangViens(tbl_LopHoc_GiangVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_GiangVien = null;
 		}
 	}
 	
@@ -335,8 +149,6 @@ namespace QLKH_ThayCao
 		
 		private string _Email;
 		
-		private EntitySet<tbl_LopHoc_SinhVien> _tbl_LopHoc_SinhViens;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -359,7 +171,6 @@ namespace QLKH_ThayCao
 		
 		public tbl_SinhVien()
 		{
-			this._tbl_LopHoc_SinhViens = new EntitySet<tbl_LopHoc_SinhVien>(new Action<tbl_LopHoc_SinhVien>(this.attach_tbl_LopHoc_SinhViens), new Action<tbl_LopHoc_SinhVien>(this.detach_tbl_LopHoc_SinhViens));
 			OnCreated();
 		}
 		
@@ -503,19 +314,6 @@ namespace QLKH_ThayCao
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_SinhVien_tbl_LopHoc_SinhVien", Storage="_tbl_LopHoc_SinhViens", ThisKey="MSSV", OtherKey="MSSV")]
-		public EntitySet<tbl_LopHoc_SinhVien> tbl_LopHoc_SinhViens
-		{
-			get
-			{
-				return this._tbl_LopHoc_SinhViens;
-			}
-			set
-			{
-				this._tbl_LopHoc_SinhViens.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -534,18 +332,6 @@ namespace QLKH_ThayCao
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tbl_LopHoc_SinhViens(tbl_LopHoc_SinhVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_SinhVien = this;
-		}
-		
-		private void detach_tbl_LopHoc_SinhViens(tbl_LopHoc_SinhVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_SinhVien = null;
 		}
 	}
 	
@@ -571,8 +357,6 @@ namespace QLKH_ThayCao
 		
 		private System.Nullable<int> _SoBuoiLyThuyet;
 		
-		private EntitySet<tbl_LopHoc> _tbl_LopHocs;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -597,7 +381,6 @@ namespace QLKH_ThayCao
 		
 		public tbl_KhoaHoc()
 		{
-			this._tbl_LopHocs = new EntitySet<tbl_LopHoc>(new Action<tbl_LopHoc>(this.attach_tbl_LopHocs), new Action<tbl_LopHoc>(this.detach_tbl_LopHocs));
 			OnCreated();
 		}
 		
@@ -761,19 +544,6 @@ namespace QLKH_ThayCao
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_KhoaHoc_tbl_LopHoc", Storage="_tbl_LopHocs", ThisKey="MaKhoaHoc", OtherKey="MaKhoaHoc")]
-		public EntitySet<tbl_LopHoc> tbl_LopHocs
-		{
-			get
-			{
-				return this._tbl_LopHocs;
-			}
-			set
-			{
-				this._tbl_LopHocs.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -793,18 +563,6 @@ namespace QLKH_ThayCao
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_tbl_LopHocs(tbl_LopHoc entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_KhoaHoc = this;
-		}
-		
-		private void detach_tbl_LopHocs(tbl_LopHoc entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_KhoaHoc = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_LopHoc")]
@@ -822,12 +580,6 @@ namespace QLKH_ThayCao
 		private string _ThoiGianKetThuc;
 		
 		private string _MaKhoaHoc;
-		
-		private EntitySet<tbl_LopHoc_GiangVien> _tbl_LopHoc_GiangViens;
-		
-		private EntitySet<tbl_LopHoc_SinhVien> _tbl_LopHoc_SinhViens;
-		
-		private EntityRef<tbl_KhoaHoc> _tbl_KhoaHoc;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -847,9 +599,6 @@ namespace QLKH_ThayCao
 		
 		public tbl_LopHoc()
 		{
-			this._tbl_LopHoc_GiangViens = new EntitySet<tbl_LopHoc_GiangVien>(new Action<tbl_LopHoc_GiangVien>(this.attach_tbl_LopHoc_GiangViens), new Action<tbl_LopHoc_GiangVien>(this.detach_tbl_LopHoc_GiangViens));
-			this._tbl_LopHoc_SinhViens = new EntitySet<tbl_LopHoc_SinhVien>(new Action<tbl_LopHoc_SinhVien>(this.attach_tbl_LopHoc_SinhViens), new Action<tbl_LopHoc_SinhVien>(this.detach_tbl_LopHoc_SinhViens));
-			this._tbl_KhoaHoc = default(EntityRef<tbl_KhoaHoc>);
 			OnCreated();
 		}
 		
@@ -944,75 +693,11 @@ namespace QLKH_ThayCao
 			{
 				if ((this._MaKhoaHoc != value))
 				{
-					if (this._tbl_KhoaHoc.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaKhoaHocChanging(value);
 					this.SendPropertyChanging();
 					this._MaKhoaHoc = value;
 					this.SendPropertyChanged("MaKhoaHoc");
 					this.OnMaKhoaHocChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LopHoc_tbl_LopHoc_GiangVien", Storage="_tbl_LopHoc_GiangViens", ThisKey="MaLH", OtherKey="MaLH")]
-		public EntitySet<tbl_LopHoc_GiangVien> tbl_LopHoc_GiangViens
-		{
-			get
-			{
-				return this._tbl_LopHoc_GiangViens;
-			}
-			set
-			{
-				this._tbl_LopHoc_GiangViens.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LopHoc_tbl_LopHoc_SinhVien", Storage="_tbl_LopHoc_SinhViens", ThisKey="MaLH", OtherKey="MaLH")]
-		public EntitySet<tbl_LopHoc_SinhVien> tbl_LopHoc_SinhViens
-		{
-			get
-			{
-				return this._tbl_LopHoc_SinhViens;
-			}
-			set
-			{
-				this._tbl_LopHoc_SinhViens.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_KhoaHoc_tbl_LopHoc", Storage="_tbl_KhoaHoc", ThisKey="MaKhoaHoc", OtherKey="MaKhoaHoc", IsForeignKey=true)]
-		public tbl_KhoaHoc tbl_KhoaHoc
-		{
-			get
-			{
-				return this._tbl_KhoaHoc.Entity;
-			}
-			set
-			{
-				tbl_KhoaHoc previousValue = this._tbl_KhoaHoc.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_KhoaHoc.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_KhoaHoc.Entity = null;
-						previousValue.tbl_LopHocs.Remove(this);
-					}
-					this._tbl_KhoaHoc.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_LopHocs.Add(this);
-						this._MaKhoaHoc = value.MaKhoaHoc;
-					}
-					else
-					{
-						this._MaKhoaHoc = default(string);
-					}
-					this.SendPropertyChanged("tbl_KhoaHoc");
 				}
 			}
 		}
@@ -1036,30 +721,6 @@ namespace QLKH_ThayCao
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_tbl_LopHoc_GiangViens(tbl_LopHoc_GiangVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_LopHoc = this;
-		}
-		
-		private void detach_tbl_LopHoc_GiangViens(tbl_LopHoc_GiangVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_LopHoc = null;
-		}
-		
-		private void attach_tbl_LopHoc_SinhViens(tbl_LopHoc_SinhVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_LopHoc = this;
-		}
-		
-		private void detach_tbl_LopHoc_SinhViens(tbl_LopHoc_SinhVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_LopHoc = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_LopHoc_GiangVien")]
@@ -1073,10 +734,6 @@ namespace QLKH_ThayCao
 		private string _MaLH;
 		
 		private string _MaGV;
-		
-		private EntityRef<tbl_GiangVien> _tbl_GiangVien;
-		
-		private EntityRef<tbl_LopHoc> _tbl_LopHoc;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1092,8 +749,6 @@ namespace QLKH_ThayCao
 		
 		public tbl_LopHoc_GiangVien()
 		{
-			this._tbl_GiangVien = default(EntityRef<tbl_GiangVien>);
-			this._tbl_LopHoc = default(EntityRef<tbl_LopHoc>);
 			OnCreated();
 		}
 		
@@ -1128,10 +783,6 @@ namespace QLKH_ThayCao
 			{
 				if ((this._MaLH != value))
 				{
-					if (this._tbl_LopHoc.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaLHChanging(value);
 					this.SendPropertyChanging();
 					this._MaLH = value;
@@ -1152,83 +803,11 @@ namespace QLKH_ThayCao
 			{
 				if ((this._MaGV != value))
 				{
-					if (this._tbl_GiangVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaGVChanging(value);
 					this.SendPropertyChanging();
 					this._MaGV = value;
 					this.SendPropertyChanged("MaGV");
 					this.OnMaGVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_GiangVien_tbl_LopHoc_GiangVien", Storage="_tbl_GiangVien", ThisKey="MaGV", OtherKey="MaGV", IsForeignKey=true)]
-		public tbl_GiangVien tbl_GiangVien
-		{
-			get
-			{
-				return this._tbl_GiangVien.Entity;
-			}
-			set
-			{
-				tbl_GiangVien previousValue = this._tbl_GiangVien.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_GiangVien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_GiangVien.Entity = null;
-						previousValue.tbl_LopHoc_GiangViens.Remove(this);
-					}
-					this._tbl_GiangVien.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_LopHoc_GiangViens.Add(this);
-						this._MaGV = value.MaGV;
-					}
-					else
-					{
-						this._MaGV = default(string);
-					}
-					this.SendPropertyChanged("tbl_GiangVien");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LopHoc_tbl_LopHoc_GiangVien", Storage="_tbl_LopHoc", ThisKey="MaLH", OtherKey="MaLH", IsForeignKey=true)]
-		public tbl_LopHoc tbl_LopHoc
-		{
-			get
-			{
-				return this._tbl_LopHoc.Entity;
-			}
-			set
-			{
-				tbl_LopHoc previousValue = this._tbl_LopHoc.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_LopHoc.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_LopHoc.Entity = null;
-						previousValue.tbl_LopHoc_GiangViens.Remove(this);
-					}
-					this._tbl_LopHoc.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_LopHoc_GiangViens.Add(this);
-						this._MaLH = value.MaLH;
-					}
-					else
-					{
-						this._MaLH = default(string);
-					}
-					this.SendPropertyChanged("tbl_LopHoc");
 				}
 			}
 		}
@@ -1266,10 +845,6 @@ namespace QLKH_ThayCao
 		
 		private string _MSSV;
 		
-		private EntityRef<tbl_LopHoc> _tbl_LopHoc;
-		
-		private EntityRef<tbl_SinhVien> _tbl_SinhVien;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1284,8 +859,6 @@ namespace QLKH_ThayCao
 		
 		public tbl_LopHoc_SinhVien()
 		{
-			this._tbl_LopHoc = default(EntityRef<tbl_LopHoc>);
-			this._tbl_SinhVien = default(EntityRef<tbl_SinhVien>);
 			OnCreated();
 		}
 		
@@ -1320,10 +893,6 @@ namespace QLKH_ThayCao
 			{
 				if ((this._MaLH != value))
 				{
-					if (this._tbl_LopHoc.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaLHChanging(value);
 					this.SendPropertyChanging();
 					this._MaLH = value;
@@ -1344,10 +913,6 @@ namespace QLKH_ThayCao
 			{
 				if ((this._MSSV != value))
 				{
-					if (this._tbl_SinhVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMSSVChanging(value);
 					this.SendPropertyChanging();
 					this._MSSV = value;
@@ -1357,70 +922,184 @@ namespace QLKH_ThayCao
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_LopHoc_tbl_LopHoc_SinhVien", Storage="_tbl_LopHoc", ThisKey="MaLH", OtherKey="MaLH", IsForeignKey=true)]
-		public tbl_LopHoc tbl_LopHoc
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_GiangVien")]
+	public partial class tbl_GiangVien : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaGV;
+		
+		private string _HoTen;
+		
+		private string _SDT;
+		
+		private string _Email;
+		
+		private string _CCCD;
+		
+		private string _DiaChi;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaGVChanging(string value);
+    partial void OnMaGVChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnCCCDChanging(string value);
+    partial void OnCCCDChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
+    #endregion
+		
+		public tbl_GiangVien()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaGV
 		{
 			get
 			{
-				return this._tbl_LopHoc.Entity;
+				return this._MaGV;
 			}
 			set
 			{
-				tbl_LopHoc previousValue = this._tbl_LopHoc.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_LopHoc.HasLoadedOrAssignedValue == false)))
+				if ((this._MaGV != value))
 				{
+					this.OnMaGVChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_LopHoc.Entity = null;
-						previousValue.tbl_LopHoc_SinhViens.Remove(this);
-					}
-					this._tbl_LopHoc.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_LopHoc_SinhViens.Add(this);
-						this._MaLH = value.MaLH;
-					}
-					else
-					{
-						this._MaLH = default(string);
-					}
-					this.SendPropertyChanged("tbl_LopHoc");
+					this._MaGV = value;
+					this.SendPropertyChanged("MaGV");
+					this.OnMaGVChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_SinhVien_tbl_LopHoc_SinhVien", Storage="_tbl_SinhVien", ThisKey="MSSV", OtherKey="MSSV", IsForeignKey=true)]
-		public tbl_SinhVien tbl_SinhVien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(300)")]
+		public string HoTen
 		{
 			get
 			{
-				return this._tbl_SinhVien.Entity;
+				return this._HoTen;
 			}
 			set
 			{
-				tbl_SinhVien previousValue = this._tbl_SinhVien.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_SinhVien.HasLoadedOrAssignedValue == false)))
+				if ((this._HoTen != value))
 				{
+					this.OnHoTenChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_SinhVien.Entity = null;
-						previousValue.tbl_LopHoc_SinhViens.Remove(this);
-					}
-					this._tbl_SinhVien.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_LopHoc_SinhViens.Add(this);
-						this._MSSV = value.MSSV;
-					}
-					else
-					{
-						this._MSSV = default(string);
-					}
-					this.SendPropertyChanged("tbl_SinhVien");
+					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NVarChar(50)")]
+		public string SDT
+		{
+			get
+			{
+				return this._SDT;
+			}
+			set
+			{
+				if ((this._SDT != value))
+				{
+					this.OnSDTChanging(value);
+					this.SendPropertyChanging();
+					this._SDT = value;
+					this.SendPropertyChanged("SDT");
+					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(300)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CCCD", DbType="NVarChar(50)")]
+		public string CCCD
+		{
+			get
+			{
+				return this._CCCD;
+			}
+			set
+			{
+				if ((this._CCCD != value))
+				{
+					this.OnCCCDChanging(value);
+					this.SendPropertyChanging();
+					this._CCCD = value;
+					this.SendPropertyChanged("CCCD");
+					this.OnCCCDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(500)")]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
 				}
 			}
 		}

@@ -24,7 +24,7 @@ namespace QLKH_ThayCao
             this.GioiHanGiangVien = obj.GioiHanGiangVien;
             this.SoBuoiLyThuyet = obj.SoBuoiLyThuyet;
             this.SoBuoiThucHanh = obj.SoBuoiThucHanh;
-            this.KinhPhiDongGop = obj.KinhPhiDongGop;           
+            this.KinhPhiDongGop = obj.KinhPhiDongGop;
         }
 
         public KhoaHoc_ett(tbl_KhoaHoc obj)
